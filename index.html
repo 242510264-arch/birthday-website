@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday 💗</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #e3f2fd);
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 45px;
+            color: #d63384;
+        }
+
+        img {
+            margin-top: 25px;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        #text {
+            font-size: 24px;
+            margin: 40px;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 500;
+            min-height: 150px;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            background-color: #ff8fab;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6f91;
+            transform: scale(1.05);
+        }
+        <style>
+.btn-kembali {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #ff6fa5;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999; /* INI PENTING */
+}
+</style>
+    </style>
+</head>
+
+<body>
+
+    <h1>happy birthday syifa 💗</h1>
+
+    <!-- pastikan file fotonya ada di folder yang sama -->
+    <img src="syifa.jpeg" alt="foto syifa">
+
+      <br><br>
+
+    <!-- INI TOMBOLNYA -->
+    <button onclick="window.location.href='ultah.html'">
+        lihat kue 🎂
+    </button>
+
+    <button class="btn-kembali" onclick="window.location.href='index.html'">
+    ⬅ kembali 💌
+</button>>
+
+    <div id="text"></div>
+
+    <button onclick="start()">buka pesan 💌</button>
+
+    <script>
+        function start() {
+
+          
+            alert("sebentar yaa...");
+            alert("hari ini bukan hari biasa.");
+            alert("hari ini hari lahirnya orang spesial.");
+            alert("dan itu kamu, syifa 💗");
+
+            let text = 
+                 "ada yang makin tua ni selamat yaa, makasi udah bertahan sejauh ini, terima kasih sudah bertahan jadi sahabat aku dari SMP sampai sekarang.\n\n" +
+                       "kita udah lewatin banyak hal bareng, ketawa bareng, panik sebelum ulangan bareng.\n\n" +
+                       "semoga kamu selalu sehat, bahagia, dan semua mimpi kamu pelan-pelan jadi nyata.\n\n" +
+                       "aku bersyukur banget punya sahabat kayak kamu 💕"+
+                       "meskipun web ini ga seberapa, tapi aku pengen kamu tau kalo aku sayang banget sama kamu, dan aku berharap kita bisa terus jadi temen yang baik buat satu sama lain.\n\n" +
+                       "kamu hebat, kamu kuat, dan aku yakin kamu bisa ngadepin apapun yang datang ke hidup kamu.\n\n" +
+                       "tetep semangat ngejar mimpi kamu, dan jangan lupa buat nikmatin setiap momen di perjalanan itu.\n\n" +
+                       "aga puitis yaa, tapi gapapa lah ya bingung mau ngetik apa lagi hhe. \n\n"+
+                     "maap kalo selama ini banyak nyakitin nya di banding jadi temennyaa, semoga kita bisa kaya gini truss yaa, ilopu🤍";
+
+            typeWriter(text);
+        }
+
+        function typeWriter(text) {
+            let i = 0;
+            let speed = 40;
+            let target = document.getElementById("text");
+            target.innerHTML = "";
+
+            function typing() {
+                if (i < text.length) {
+                    if (text.charAt(i) === "\n") {
+                        target.innerHTML += "<br>";
+                    } else {
+                        target.innerHTML += text.charAt(i);
+                    }
+                    i++;
+                    setTimeout(typing, speed);
+                }
+            }
+
+            typing();
+        }
+    </script>
+
+</body>
+</html>

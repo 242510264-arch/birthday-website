@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kue Ulang Tahun 🎂</title>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ffe0f0,#e0f7ff);
+    font-family:Arial;
+    overflow:hidden;
+}
+
+/* confetti */
+.confetti{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:red;
+    top:-10px;
+    animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+/* cake */
+.cake{
+    position:relative;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+.layer{
+    width:260px;
+    height:80px;
+    background:#ffb6c1;
+    border-radius:20px;
+    margin:auto;
+    position:relative;
+    box-shadow:0 6px 0 #ff8fab;
+}
+
+.middle{
+    width:230px;
+    background:#ffc8dd;
+}
+
+.top{
+    width:200px;
+    background:#ffafcc;
+}
+
+/* cream */
+.cream{
+    position:absolute;
+    top:-10px;
+    left:0;
+    width:100%;
+    height:25px;
+    background:white;
+    border-radius:15px;
+}
+
+.cream::before,
+.cream::after{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:35px;
+    background:white;
+    border-radius:50%;
+    top:10px;
+}
+
+.cream::before{ left:40px; }
+.cream::after{ right:40px; }
+
+/* candle */
+.candle{
+    width:15px;
+    height:50px;
+    background:white;
+    position:absolute;
+    top:-65px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.flame{
+    width:15px;
+    height:20px;
+    background:orange;
+    border-radius:50%;
+    position:absolute;
+    top:-20px;
+    animation:flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker{
+    from{transform:scale(1);}
+    to{transform:scale(1.2);}
+}
+
+h2{
+    position:absolute;
+    top:-120px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#d63384;
+}
+
+.name{
+    position:absolute;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    font-weight:bold;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cake">
+
+    <h2>make a wish ✨</h2>
+
+    <div class="candle" onclick="blow()">
+        <div class="flame" id="flame"></div>
+    </div>
+
+    <div class="layer top">
+        <div class="cream"></div>
+        <div class="name">syifa sari💗</div>
+    </div>
+
+    <div class="layer middle">
+        <div class="cream"></div>
+    </div>
+
+    <div class="layer">
+        <div class="cream"></div>
+    </div>
+
+</div>
+
+<script>
+function blow(){
+    document.getElementById("flame").style.display="none";
+    alert("yeay 🎉 wish kamu semoga terkabul ✨");
+}
+
+/* generate confetti */
+for(let i=0;i<50;i++){
+    let conf=document.createElement("div");
+    conf.className="confetti";
+    conf.style.left=Math.random()*100+"vw";
+    conf.style.backgroundColor=
+        ["#ff8fab","#ffb3c6","#cdb4db","#a2d2ff","#ffc8dd"]
+        [Math.floor(Math.random()*5)];
+    conf.style.animationDuration=(Math.random()*3+2)+"s";
+    document.body.appendChild(conf);
+}
+</script>
+
+</body>
+</html>
